@@ -22,7 +22,9 @@
     <None Include="wwwroot\lib\bootstrap\js\bootstrap.js" />
     <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
     <None Include="wwwroot\lib\bootstrap\js\npm.js" />
-    <None Include="wwwroot\content\site.css" />
+    <None Include="wwwroot\content\site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\Images\AvlLogo.png" />
     <None Include="wwwroot\Images\pattern.png" />
     <None Include="wwwroot\lib\jquery\core.js" />

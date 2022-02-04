@@ -26,8 +26,11 @@ namespace OrderManagement.UI
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(_configuration.GetConnectionString("SQLDB")));
 
-            services.AddScoped<IProductRepository, MockProductRepository>();
-            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            //services.AddScoped<IProductRepository, MockProductRepository>();
+            //services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            services.AddScoped<IProductRepository, SQLProductRepository>();
+            services.AddScoped<ICategoryRepository, SQLCategoryRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
