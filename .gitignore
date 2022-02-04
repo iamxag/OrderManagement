@@ -1,0 +1,4 @@
+/.vs
+/src/OrderManagement.UI/.config
+/src/OrderManagement.UI/bin
+/src/OrderManagement.UI/obj
