@@ -13,10 +13,10 @@ namespace OrderManagement.UI
     {
         public static void Main(string[] args)
         {
-            Create(args).Build().Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder Create(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

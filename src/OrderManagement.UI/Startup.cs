@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,21 +14,20 @@ namespace OrderManagement.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 
-        private IConfiguration _configuration;
-        private IProductRepository _productRepository;
+        private readonly IConfiguration _configuration;
         public Startup(IConfiguration conf)
         {
             _configuration = conf;           
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            //IProductRepository productRepository = new MockProductRepository();
-            //ICategoryRepository categoryRepository = new MockCategoryRepository();
             services.AddControllersWithViews();
+
+            services.AddDbContext<AppDbContext>(options =>
+               options.UseSqlServer(_configuration.GetConnectionString("SQLDB")));
+
             services.AddScoped<IProductRepository, MockProductRepository>();
             services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-            //services.AddTransient<ICategoryRepository, MockCategoryRepository>();
-            //services.AddSingleton<ICategoryRepository, MockCategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,24 +38,6 @@ namespace OrderManagement.UI
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.Use(async (context, next) =>
-            //{
-            //    await context.Response.WriteAsync("MiddleWare1: Incomming Request\n");
-            //    await next();
-            //    await context.Response.WriteAsync("MiddleWare1: Outcomming Request\n");
-            //});
-            //app.Use(async (context, next) =>
-            //{
-            //    await context.Response.WriteAsync("MiddleWare2: Incomming Request\n");
-            //    await next();
-            //    await context.Response.WriteAsync("MiddleWare2: Outcomming Request\n");
-            //});
-            //app.Use(async (context, next) =>
-            //{
-            //    await context.Response.WriteAsync("MiddleWare3: Incomming Request\n");
-            //    await next();
-            //    await context.Response.WriteAsync("MiddleWare3: Outcomming Request\n");
-            //});
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
