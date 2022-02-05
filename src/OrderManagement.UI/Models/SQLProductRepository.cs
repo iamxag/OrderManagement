@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace OrderManagement.UI.Models
@@ -12,17 +13,17 @@ namespace OrderManagement.UI.Models
         }
         public List<Product> GetAllProducts()
         {
-            return _appDbContext.Products.ToList();
+            return _appDbContext.Products.Include(c => c.Category).ToList();
         }
 
         public Product GetProductById(int id)
         {
-            return _appDbContext.Products.Where(x => x.ProductId == id).FirstOrDefault();
+            return _appDbContext.Products.Include(c => c.Category).Where(x => x.ProductId == id).FirstOrDefault();
         }
 
         public List<Product> GetProductOfTheWeek()
         {
-            return _appDbContext.Products.Where(x => x.IsProductOfTheWeek == true).ToList();
+            return _appDbContext.Products.Include(c => c.Category).Where(x => x.IsProductOfTheWeek == true).ToList();
         }
     }
 }

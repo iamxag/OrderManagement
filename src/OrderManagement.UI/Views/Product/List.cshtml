@@ -2,16 +2,6 @@
 @foreach(var product in Model)
 {
     string @value = @ViewBag.Url + @product.ImageUrl;
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <img src="@value">
-            <div class="caption">
-                <h3 class="pull-right">@product.Price</h3>
-                <h3>
-                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductId">@product.Name</a>
-                </h3>
-                <h3>@product.ShortDescription</h3>
-            </div>
-        </div>
-    </div>
+    product.ImageUrl = @value;
+    <partial name="_ProdcutCard" model="product"/>
 }      

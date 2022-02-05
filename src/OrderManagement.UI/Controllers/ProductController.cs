@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.UI.Models;
+using System.Linq;
 
 namespace OrderManagement.UI.Controllers
 {
@@ -18,14 +19,22 @@ namespace OrderManagement.UI.Controllers
             Product product =  _productRepository.GetProductById(id);
             return View(product);
         }
-        public ViewResult List()        
+        public ViewResult List(string categoryName)        
         {
             string Url = HttpContext.Request.GetEncodedUrl();
             Url = Url.Remove(Url.LastIndexOf("/"));
             Url = Url.Remove(Url.LastIndexOf("/"));
             ViewBag.Url = Url;
             ViewBag.Title = "ProductList";
-            return View(_productRepository.GetAllProducts());
+            if (string.IsNullOrEmpty(categoryName))
+            {
+                return View(_productRepository.GetAllProducts());
+            }
+            else
+            {
+                return View(_productRepository.GetAllProducts().Where(x => x.Category.CategoryName == categoryName).OrderBy(p => p.ProductId).ToList());
+            }           
+            
         }
     }
 }

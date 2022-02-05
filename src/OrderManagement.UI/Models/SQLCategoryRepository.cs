@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace OrderManagement.UI.Models
@@ -13,7 +14,7 @@ namespace OrderManagement.UI.Models
         public List<Category> GetAllCategories()
         {
 
-            return _appDbContext.Categories.ToList();
+            return _appDbContext.Categories.Include(c => c.Products).ToList();
         }
     }
 }

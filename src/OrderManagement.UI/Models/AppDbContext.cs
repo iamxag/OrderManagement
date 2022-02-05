@@ -4,6 +4,9 @@ namespace OrderManagement.UI.Models
 {
     public class AppDbContext : DbContext
     {
+        //add-migration migrationName  -- when we want to create new migration
+        //updatabase - to update database with current(latest) migration
+        //update-database -migration migrationname(InitialCommit) - Only Name with out trailing key and .cs
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
