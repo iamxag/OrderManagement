@@ -5,7 +5,7 @@ namespace OrderManagement.UI.Models
 {
     public class MockProductRepository : IProductRepository
     {
-        List<Product> _products;
+        readonly List<Product> _products;
         public MockProductRepository()
         {
             _products = new List<Product>()
@@ -25,9 +25,9 @@ namespace OrderManagement.UI.Models
         }
 
 
-        public Product GetProductOfTheWeek()
+        public List<Product> GetProductOfTheWeek()
         {
-            return _products.Where(x => x.IsProductOfTheWeek == true).FirstOrDefault();
+            return _products.Where(x => x.IsProductOfTheWeek == true).ToList();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace OrderManagement.UI.Models
     public interface IProductRepository
     {
         List<Product> GetAllProducts();
-        Product GetProductOfTheWeek();
+        List<Product> GetProductOfTheWeek();
         Product GetProductById(int id);
     }
 }

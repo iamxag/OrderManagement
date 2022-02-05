@@ -2,7 +2,7 @@
 
 namespace OrderManagement.UI.Migrations
 {
-    public partial class seedData : Migration
+    public partial class SeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

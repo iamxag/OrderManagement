@@ -9,7 +9,7 @@ using OrderManagement.UI.Models;
 namespace OrderManagement.UI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220204180011_InitialCommit")]
+    [Migration("20220205061525_InitialCommit")]
     partial class InitialCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

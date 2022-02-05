@@ -20,9 +20,9 @@ namespace OrderManagement.UI.Models
             return _appDbContext.Products.Where(x => x.ProductId == id).FirstOrDefault();
         }
 
-        public Product GetProductOfTheWeek()
+        public List<Product> GetProductOfTheWeek()
         {
-            return _appDbContext.Products.Where(x => x.IsProductOfTheWeek == true).FirstOrDefault();
+            return _appDbContext.Products.Where(x => x.IsProductOfTheWeek == true).ToList();
         }
     }
 }

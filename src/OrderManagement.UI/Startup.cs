@@ -26,10 +26,13 @@ namespace OrderManagement.UI
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(_configuration.GetConnectionString("SQLDB")));
 
-            //services.AddScoped<IProductRepository, MockProductRepository>();
-            //services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-            services.AddScoped<IProductRepository, SQLProductRepository>();
-            services.AddScoped<ICategoryRepository, SQLCategoryRepository>();
+            services.AddScoped<IProductRepository, MockProductRepository>();
+            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            //services.AddScoped<IProductRepository, SQLProductRepository>();
+            //services.AddScoped<ICategoryRepository, SQLCategoryRepository>();
+            //services.AddTransient<IProductRepository, SQLProductRepository>();
+            //services.AddSingleton<IProductRepository, SQLProductRepository>();
+
 
         }
 
@@ -41,15 +44,17 @@ namespace OrderManagement.UI
                 app.UseDeveloperExceptionPage();
             }
 
-
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
             app.UseRouting();
+            
             // https://www.ordermangememt.com/Product/List/
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
+                    //website/homecontroller/index/
                     pattern: "{controller=home}/{action=Index}/{id?}");
                 //endpoints.MapGet("/", async context =>
                 //{

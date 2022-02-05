@@ -9,8 +9,8 @@ using OrderManagement.UI.Models;
 namespace OrderManagement.UI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220204180253_seedData")]
-    partial class seedData
+    [Migration("20220205061826_SeedData")]
+    partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

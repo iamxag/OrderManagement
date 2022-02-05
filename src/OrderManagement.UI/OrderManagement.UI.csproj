@@ -6,43 +6,96 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.css" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.css.map" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.min.css" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap.css" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap.css.map" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap.min.css" />
-    <None Include="wwwroot\lib\bootstrap\css\bootstrap.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="wwwroot\lib\bootstrap\js\bootstrap.js" />
-    <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
-    <None Include="wwwroot\lib\bootstrap\js\npm.js" />
-    <None Include="wwwroot\content\site.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\Images\AvlLogo.png" />
-    <None Include="wwwroot\Images\pattern.png" />
-    <None Include="wwwroot\lib\jquery\core.js" />
-    <None Include="wwwroot\lib\jquery\jquery.js" />
-    <None Include="wwwroot\lib\jquery\jquery.min.js" />
-    <None Include="wwwroot\lib\jquery\jquery.min.map" />
-    <None Include="wwwroot\lib\jquery\jquery.slim.js" />
-    <None Include="wwwroot\lib\jquery\jquery.slim.min.js" />
-    <None Include="wwwroot\lib\jquery\jquery.slim.min.map" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\content\site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\AvlLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\BBQ Strips.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\BNaturalsPomegranate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\BorgePepper.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\cheesecake.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\Ching%27s Soup.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\Colgate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\DiwaliFestiveGiftPacks.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\KarachiBisuits.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\KnorrSweetCorn.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\Maggi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\pattern.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\SunbeanCoffee.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\SunfeastBadamMilk.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\Tandoori Seekh Kebab.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\js\bootstrap.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\js\npm.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\core.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\jquery.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
