@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OrderManagement.UI.Models
+namespace OrderManagement.Domain.Models
 {
     public class Category
     {

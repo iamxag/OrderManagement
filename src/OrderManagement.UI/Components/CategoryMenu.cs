@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderManagement.UI.Models;
+using OrderManagement.Repository.Models;
 using System.Linq;
 
 namespace OrderManagement.UI.Components

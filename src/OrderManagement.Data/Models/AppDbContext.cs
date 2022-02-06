@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OrderManagement.Domain.Models;
 
-namespace OrderManagement.UI.Models
+namespace OrderManagement.Data.Models
 {
     public class AppDbContext : DbContext
     {

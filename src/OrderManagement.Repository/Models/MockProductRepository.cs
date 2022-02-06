@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using OrderManagement.Domain.Models;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace OrderManagement.UI.Models
+namespace OrderManagement.Repository.Models
 {
     public class MockProductRepository : IProductRepository
     {

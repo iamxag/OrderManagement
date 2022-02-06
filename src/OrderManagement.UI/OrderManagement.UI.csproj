@@ -98,4 +98,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrderManagement.Repository\OrderManagement.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

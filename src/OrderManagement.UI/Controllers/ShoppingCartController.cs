@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderManagement.UI.Models;
+using OrderManagement.Repository.Models;
 using OrderManagement.UI.ViewModel;
 using System.Linq;
 
@@ -19,7 +19,7 @@ namespace OrderManagement.UI.Controllers
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
-            ShoppingCartViewModel shoppingCartViewModel = new ShoppingCartViewModel()
+            ShoppingCartViewModel shoppingCartViewModel = new()
             {
                 ShoppingCart = _shoppingCart,
                 ShappingCartTotal = _shoppingCart.GetShoppingCartTotal(),

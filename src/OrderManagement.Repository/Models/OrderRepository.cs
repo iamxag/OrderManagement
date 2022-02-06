@@ -1,7 +1,9 @@
-﻿using System;
+﻿using OrderManagement.Data.Models;
+using OrderManagement.Domain.Models;
+using System;
 using System.Collections.Generic;
 
-namespace OrderManagement.UI.Models
+namespace OrderManagement.Repository.Models
 {
     public class OrderRepository : IOrderRepository
     {
@@ -20,7 +22,7 @@ namespace OrderManagement.UI.Models
             order.OrderDetails = new List<OrderDetail>();
             foreach(ShoppingCartItem shoppingCartItem in shoppingCartItems)
             {
-                OrderDetail orderDetail = new OrderDetail()
+                OrderDetail orderDetail = new()
                 {
                     Quantity = shoppingCartItem.Quantity,
                     ProductId = shoppingCartItem.Product.ProductId,

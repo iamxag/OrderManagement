@@ -2,3 +2,9 @@
 /src/OrderManagement.UI/.config
 /src/OrderManagement.UI/bin
 /src/OrderManagement.UI/obj
+/src/OrderManagement.Data/obj
+/src/OrderManagement.Data/bin
+/src/OrderManagement.Domain/obj
+/src/OrderManagement.Domain/bin
+/src/OrderManagement.Repository/obj
+/src/OrderManagement.Repository/bin

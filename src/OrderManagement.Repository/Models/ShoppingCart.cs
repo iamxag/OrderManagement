@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using OrderManagement.Data.Models;
+using OrderManagement.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OrderManagement.UI.Models
+namespace OrderManagement.Repository.Models
 {
     public class ShoppingCart
     {

@@ -1,4 +1,4 @@
-﻿namespace OrderManagement.UI.Models
+﻿namespace OrderManagement.Domain.Models
 {
     public class Product
     {
