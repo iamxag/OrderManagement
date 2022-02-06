@@ -26,13 +26,27 @@ namespace OrderManagement.UI.Controllers
             };
             return View(shoppingCartViewModel);
         }
-
+        public RedirectToActionResult ClearCart()
+        {
+            _shoppingCart.ClearCart();
+            return RedirectToAction("Index");
+        }
         public RedirectToActionResult AddToShoppingCart(int productId)
         {
             var selectedProduct = _productRepository.GetProductById(productId);
             if(selectedProduct != null)
             {
                 _shoppingCart.AddToCart(selectedProduct, 1);
+            }
+            return RedirectToAction("Index");
+        }
+        public RedirectToActionResult ReduceQuantiyFromShoppingCart(int productId)
+        {
+            var selectedProduct = _productRepository.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
+
+            if (selectedProduct != null)
+            {
+                _shoppingCart.ReduceQuantityFromCart(selectedProduct);
             }
             return RedirectToAction("Index");
         }

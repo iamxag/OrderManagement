@@ -19,10 +19,23 @@
                 <td class"text-center">@shoppingCartItem.Product.Price.ToString()</td>
                 <td class"text-center"> @((shoppingCartItem.Quantity * shoppingCartItem.Product.Price).ToString("c"))</td>
                 <td class="RemoveFromCart">
-                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">Remove From Cart</a>
+                    <div class="row">
+                        <a class="button btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">+</a>
+                        <a class="button btn btn-primary" asp-controller="ShoppingCart" asp-action="ReduceQuantiyFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">-</a>
+                        <a class="button btn btn-primary" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">Remove From Cart</a>
+                    </div>                    
                 </td>
-
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total :</td>
+            <td class="text-right">@Model.ShappingCartTotal.ToString()</td>
+        </tr>
+    </tfoot>
 </table>
+<div class="text-center">
+        <a class="button btn btn-primary" asp-controller="ShoppingCart" asp-action="ClearCart">Clear Cart</a>
+        <a>Check Out now!</a>
+</div>

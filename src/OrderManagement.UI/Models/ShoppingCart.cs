@@ -64,7 +64,16 @@ namespace OrderManagement.UI.Models
             }
             _context.SaveChanges();
         }
-        public int RemoveFromCart(Product product)
+
+        public void RemoveFromCart(Product product)
+        {
+            ShoppingCartItem shoppingCartItem = _context.ShoppingCartItems.SingleOrDefault(x => x.Product.ProductId == product.ProductId && x.ShoppingCartId == ShoppingCartId);
+            if(shoppingCartItem != null)
+                _context.ShoppingCartItems.Remove(shoppingCartItem);
+            _context.SaveChanges();
+        }
+
+        public int ReduceQuantityFromCart(Product product)
         {
             ShoppingCartItem shoppingCartItem = _context.ShoppingCartItems.SingleOrDefault(x => x.Product.ProductId == product.ProductId && x.ShoppingCartId == ShoppingCartId);
             int localQuantity = 0;
@@ -72,8 +81,7 @@ namespace OrderManagement.UI.Models
             {
                 if(shoppingCartItem.Quantity > 1)
                 {
-                    localQuantity = shoppingCartItem.Quantity--;
-                    shoppingCartItem.Quantity--;
+                    localQuantity = --shoppingCartItem.Quantity;
                 }
                     
                 else
