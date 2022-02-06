@@ -1,0 +1,24 @@
+﻿@model ShoppingCartViewModel
+<h2>Your Shopping Cart</h2>
+<h4>Here are the Products in your Shopping Cart</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Quantiy</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>SubTotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(ShoppingCartItem shoppingCartItem in @Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td class"text-center">@shoppingCartItem.Quantity</td>
+                <td class"text-center">@shoppingCartItem.Product.Name</td>
+                <td class"text-center">@shoppingCartItem.Product.Price.ToString()</td>
+                <td class"text-center"> @((shoppingCartItem.Quantity * shoppingCartItem.Product.Price).ToString("c"))</td>
+            </tr>
+        }
+    </tbody>
+</table>

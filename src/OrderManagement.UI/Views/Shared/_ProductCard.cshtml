@@ -10,4 +10,9 @@
             <h3>@Model.ShortDescription</h3>
         </div>
     </div>
+    <div class="addToCart">
+        <p class="button">
+            <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId">Add to Cart</a>
+        </p>
+    </div>
 </div>

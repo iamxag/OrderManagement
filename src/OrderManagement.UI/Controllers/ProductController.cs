@@ -7,16 +7,16 @@ namespace OrderManagement.UI.Controllers
 {
     public class ProductController : Controller
     {
-        public IProductRepository _productRepository { get; }
+        public IProductRepository ProductRepository { get; }
         public ProductController(IProductRepository productRepository)
         {
-            _productRepository = productRepository;
+            ProductRepository = productRepository;
         }
 
         public IActionResult Details(int id)
         {
             ViewBag.Title = "Detials";
-            Product product =  _productRepository.GetProductById(id);
+            Product product =  ProductRepository.GetProductById(id);
             return View(product);
         }
         public ViewResult List(string categoryName)        
@@ -28,11 +28,11 @@ namespace OrderManagement.UI.Controllers
             ViewBag.Title = "ProductList";
             if (string.IsNullOrEmpty(categoryName))
             {
-                return View(_productRepository.GetAllProducts());
+                return View(ProductRepository.GetAllProducts());
             }
             else
             {
-                return View(_productRepository.GetAllProducts().Where(x => x.Category.CategoryName == categoryName).OrderBy(p => p.ProductId).ToList());
+                return View(ProductRepository.GetAllProducts().Where(x => x.Category.CategoryName == categoryName).OrderBy(p => p.ProductId).ToList());
             }           
             
         }

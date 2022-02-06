@@ -32,8 +32,9 @@ namespace OrderManagement.UI
             services.AddScoped<ICategoryRepository, SQLCategoryRepository>();
             //services.AddTransient<IProductRepository, SQLProductRepository>();
             //services.AddSingleton<IProductRepository, SQLProductRepository>();
-
-
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +48,7 @@ namespace OrderManagement.UI
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            app.UseSession();
             app.UseRouting();
             
             // https://www.ordermangememt.com/Product/List/
