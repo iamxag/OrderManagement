@@ -70,7 +70,7 @@ namespace OrderManagement.UI.Models
             int localQuantity = 0;
             if(shoppingCartItem != null )
             {
-                if(shoppingCartItem.Quantity > 0)
+                if(shoppingCartItem.Quantity > 1)
                 {
                     localQuantity = shoppingCartItem.Quantity--;
                     shoppingCartItem.Quantity--;

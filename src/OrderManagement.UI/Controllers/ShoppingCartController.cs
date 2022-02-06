@@ -38,11 +38,11 @@ namespace OrderManagement.UI.Controllers
         }
         public RedirectToActionResult RemoveFromShoppingCart(int productId)
         {
-            var selectedPie = _productRepository.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
+            var selectedProduct = _productRepository.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
 
-            if (selectedPie != null)
+            if (selectedProduct != null)
             {
-                _shoppingCart.RemoveFromCart(selectedPie);
+                _shoppingCart.RemoveFromCart(selectedProduct);
             }
             return RedirectToAction("Index");
         }

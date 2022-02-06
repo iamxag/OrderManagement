@@ -18,6 +18,10 @@
                 <td class"text-center">@shoppingCartItem.Product.Name</td>
                 <td class"text-center">@shoppingCartItem.Product.Price.ToString()</td>
                 <td class"text-center"> @((shoppingCartItem.Quantity * shoppingCartItem.Product.Price).ToString("c"))</td>
+                <td class="RemoveFromCart">
+                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">Remove From Cart</a>
+                </td>
+
             </tr>
         }
     </tbody>
