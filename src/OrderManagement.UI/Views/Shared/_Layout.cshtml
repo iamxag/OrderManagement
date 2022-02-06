@@ -26,7 +26,8 @@
                     <ul class="nav navbar-nav">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         @await Component.InvokeAsync("CategoryMenu")
-                        @*<li><a asp-controller="Product" asp-action="List">Products</a></li>*@
+                        <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        @await Component.InvokeAsync("CartSummary")
                     </ul>
                 </div>
             </div>

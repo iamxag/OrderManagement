@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrderManagement.UI.Models
 {
     public class Order
     {
+        [BindNever]
         public int OrderId { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
-
+        [Required(ErrorMessage = "Please Enter you Name First")]
         public string Name { get; set; }
 
         public string Address { get; set; }

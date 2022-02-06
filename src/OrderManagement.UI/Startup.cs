@@ -33,6 +33,7 @@ namespace OrderManagement.UI
             //services.AddTransient<IProductRepository, SQLProductRepository>();
             //services.AddSingleton<IProductRepository, SQLProductRepository>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddHttpContextAccessor();
             services.AddSession();
         }

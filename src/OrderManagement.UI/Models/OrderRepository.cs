@@ -10,6 +10,7 @@ namespace OrderManagement.UI.Models
         public OrderRepository(AppDbContext appDbContext, ShoppingCart shoppingCart)
         {
             _appDbContext = appDbContext;
+            _shoppingCart = shoppingCart;
         }
         public void CreateOrder(Order order)
         {
