@@ -1,0 +1,44 @@
+﻿@page
+@model OrderManagement.UI.Razor.Pages.ShoppingCartPageModel
+@{
+}
+<h2>Your Shopping Cart</h2>
+<h4>Here are the Products in your Shopping Cart</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Quantiy</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>SubTotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(ShoppingCartItem shoppingCartItem in @Model.ShoppingCartViewModel.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td class"text-center">@shoppingCartItem.Quantity</td>
+                <td class"text-center">@shoppingCartItem.Product.Name</td>
+                <td class"text-center">@shoppingCartItem.Product.Price.ToString()</td>
+                <td class"text-center"> @((shoppingCartItem.Quantity * shoppingCartItem.Product.Price).ToString("c"))</td>
+                <td class="RemoveFromCart">
+                    <div class="row">
+                        <a class="button btn btn-primary" method="get" asp-page="ShoppingCartPage" asp-page-handler="AddToShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">+</a>
+                        <a class="button btn btn-primary" method="get" asp-page="ShoppingCartPage" asp-page-handler="ReduceQuantiyFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">-</a>
+                        <a class="button btn btn-primary" method="get" asp-page="ShoppingCartPage" asp-page-handler="RemoveFromShoppingCart" asp-route-productId="@shoppingCartItem.Product.ProductId">Remove From Cart</a>
+                    </div>                    
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total :</td>
+            <td class="text-right">@Model.ShoppingCartViewModel.ShappingCartTotal.ToString()</td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+        <a class="button btn btn-primary" method="get" asp-page="ShoppingCartPage" asp-page-handler="ClearCart">Clear Cart</a>
+        <a class="btn btn-primary" asp-page="Checkout">Check out now!</a>
+</div>

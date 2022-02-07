@@ -1,0 +1,10 @@
+﻿@page
+@model OrderManagement.UI.Razor.Pages.ProductListModel
+@{
+}
+@foreach(var product in Model.Products)
+{
+    string @value = @ViewBag.Url + @product.ImageUrl;
+    product.ImageUrl = @value;
+    <partial name="_ProductCard" model="product"/>
+}      

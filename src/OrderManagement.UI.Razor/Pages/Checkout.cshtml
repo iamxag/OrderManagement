@@ -1,0 +1,88 @@
+﻿@page
+@model OrderManagement.UI.Razor.Pages.CheckoutModel
+@{
+}
+<form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+    <h4>You're just one step away from your Products.</h4>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <div class="form-group">
+        <label asp-for="Order.Name" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.Name" class="form-control" />
+            <span asp-validation-for="Order.Name" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Address" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.Address" class="form-control" />
+            <span asp-validation-for="Order.Address" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Mode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.Mode" class="form-control" />
+            <span asp-validation-for="Order.Mode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.ZipCode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.ZipCode" class="form-control" />
+            <span asp-validation-for="Order.ZipCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.City" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.City" class="form-control" />
+            <span asp-validation-for="Order.City" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.State" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.State" class="form-control" />
+            <span asp-validation-for="Order.State" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Country" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.Country" class="form-control" />
+            <span asp-validation-for="Order.Country" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.PhoneNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.PhoneNumber" class="form-control" />
+            <span asp-validation-for="Order.PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Email" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Order.Email" class="form-control" />
+            <span asp-validation-for="Order.Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Complete order" />
+        </div>
+    </div>
+</form>

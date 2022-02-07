@@ -8,3 +8,5 @@
 /src/OrderManagement.Domain/bin
 /src/OrderManagement.Repository/obj
 /src/OrderManagement.Repository/bin
+/src/OrderManagement.UI.Razor/bin
+/src/OrderManagement.UI.Razor/obj
