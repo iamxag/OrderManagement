@@ -28,7 +28,7 @@ namespace OrderManagement.UI.Razor
         {
             services.AddRazorPages();
             services.AddDbContext<AppDbContext>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("SQLDB")));
+               options.UseSqlServer(Configuration.GetConnectionString("SQLAWS")));
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
