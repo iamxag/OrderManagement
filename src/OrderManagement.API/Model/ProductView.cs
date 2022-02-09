@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
-
-namespace OrderManagement.Domain.Models
+﻿namespace OrderManagement.API.Controllers
 {
-    public class Product
+    internal class ProductView
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
@@ -14,7 +12,5 @@ namespace OrderManagement.Domain.Models
         public bool IsProductOfTheWeek { get; set; }
         public bool InStock { get; set; }
         public int CategoryId { get; set; }
-        [JsonIgnore]
-        public Category Category { get; set; }
     }
 }
